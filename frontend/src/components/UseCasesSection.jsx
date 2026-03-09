@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useCases } from '../data/automationData';
 import UseCaseCard from './UseCaseCard';
 import FilterSidebar from './FilterSidebar';
@@ -50,7 +50,7 @@ const UseCasesSection = () => {
     <section 
       id="use-cases"
       data-testid="use-cases-section"
-      className="py-20 px-6"
+      className="py-20 px-6 bg-[#f5f5f5]"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
@@ -60,11 +60,11 @@ const UseCasesSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl sm:text-4xl font-bold text-white mb-3"
+              className="text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-3"
             >
               15 Proven Use Cases
             </motion.h2>
-            <p className="text-[#A1A1AA] max-w-xl">
+            <p className="text-[#4a4a4a] max-w-xl">
               Real automation workflows with documented ROI. Filter by your industry and requirements.
             </p>
           </div>
@@ -75,19 +75,19 @@ const UseCasesSection = () => {
               data-testid="open-filters-mobile"
               variant="outline"
               onClick={() => setShowMobileFilters(true)}
-              className="md:hidden border-white/10"
+              className="md:hidden border-black/10"
             >
               <Filter className="w-4 h-4 mr-2" />
               Filters
             </Button>
             
             {/* View toggle */}
-            <div className="hidden sm:flex items-center gap-1 bg-white/5 rounded-lg p-1">
+            <div className="hidden sm:flex items-center gap-1 bg-white rounded-lg p-1 border border-black/10">
               <button
                 data-testid="view-grid"
                 onClick={() => setViewMode('grid')}
                 className={`p-2 rounded-md transition-colors ${
-                  viewMode === 'grid' ? 'bg-white/10 text-white' : 'text-[#52525B] hover:text-white'
+                  viewMode === 'grid' ? 'bg-[#f5f5f5] text-[#1a1a1a]' : 'text-[#717171] hover:text-[#1a1a1a]'
                 }`}
               >
                 <Grid3X3 className="w-4 h-4" />
@@ -96,7 +96,7 @@ const UseCasesSection = () => {
                 data-testid="view-list"
                 onClick={() => setViewMode('list')}
                 className={`p-2 rounded-md transition-colors ${
-                  viewMode === 'list' ? 'bg-white/10 text-white' : 'text-[#52525B] hover:text-white'
+                  viewMode === 'list' ? 'bg-[#f5f5f5] text-[#1a1a1a]' : 'text-[#717171] hover:text-[#1a1a1a]'
                 }`}
               >
                 <List className="w-4 h-4" />
@@ -104,7 +104,7 @@ const UseCasesSection = () => {
             </div>
             
             {/* Results count */}
-            <span className="text-sm text-[#52525B]">
+            <span className="text-sm text-[#717171]">
               {filteredCases.length} results
             </span>
           </div>
@@ -120,16 +120,14 @@ const UseCasesSection = () => {
           </div>
 
           {/* Mobile Filter Modal */}
-          <AnimatePresence>
-            {showMobileFilters && (
-              <FilterSidebar 
-                filters={filters} 
-                setFilters={setFilters}
-                onClose={() => setShowMobileFilters(false)}
-                isMobile
-              />
-            )}
-          </AnimatePresence>
+          {showMobileFilters && (
+            <FilterSidebar 
+              filters={filters} 
+              setFilters={setFilters}
+              onClose={() => setShowMobileFilters(false)}
+              isMobile
+            />
+          )}
 
           {/* Use Cases Grid */}
           <div className="flex-1">
@@ -139,7 +137,7 @@ const UseCasesSection = () => {
                 animate={{ opacity: 1 }}
                 className="text-center py-20"
               >
-                <p className="text-[#52525B] text-lg">No use cases match your filters</p>
+                <p className="text-[#717171] text-lg">No use cases match your filters</p>
                 <Button
                   variant="link"
                   onClick={() => setFilters({ industry: 'all', difficulty: 'all', roi: 'all', minTimeSaved: 0 })}
@@ -169,14 +167,12 @@ const UseCasesSection = () => {
       </div>
 
       {/* Use Case Modal */}
-      <AnimatePresence>
-        {selectedCase && (
-          <UseCaseModal 
-            useCase={selectedCase} 
-            onClose={() => setSelectedCase(null)} 
-          />
-        )}
-      </AnimatePresence>
+      {selectedCase && (
+        <UseCaseModal 
+          useCase={selectedCase} 
+          onClose={() => setSelectedCase(null)} 
+        />
+      )}
     </section>
   );
 };

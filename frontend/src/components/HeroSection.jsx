@@ -15,13 +15,13 @@ const HeroSection = ({ onNavigate }) => {
           backgroundImage: `url('https://images.unsplash.com/photo-1647427060118-4911c9821b82?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzZ8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBhdXRvbWF0ZWQlMjBmYWN0b3J5JTIwcm9ib3RpY3N8ZW58MHx8fHwxNzcyMDU4OTk2fDA&ixlib=rb-4.1.0&q=85')`
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a]/95 via-[#1a1a1a]/90 to-[#1a1a1a]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/85 to-[#f5f5f5]" />
       
       {/* Animated grid pattern */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.2) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(59, 130, 246, 0.2) 1px, transparent 1px)`,
           backgroundSize: '50px 50px'
         }} />
       </div>
@@ -38,20 +38,20 @@ const HeroSection = ({ onNavigate }) => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-black/10 shadow-sm mb-8"
           >
             <Zap className="w-4 h-4 text-[#3B82F6]" />
-            <span className="text-sm text-[#A1A1AA]">2025 Automation Guide for SMBs</span>
+            <span className="text-sm text-[#4a4a4a]">2025 Automation Guide for SMBs</span>
           </motion.div>
 
           {/* Main headline */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-            <span className="text-white">AI Automation</span>
+            <span className="text-[#1a1a1a]">AI Automation</span>
             <br />
             <span className="gradient-text">That Actually Works</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-[#A1A1AA] max-w-2xl mx-auto mb-12">
+          <p className="text-lg sm:text-xl text-[#4a4a4a] max-w-2xl mx-auto mb-12">
             15 proven use cases with real ROI calculations. 
             Stop guessing, start automating.
           </p>
@@ -63,7 +63,7 @@ const HeroSection = ({ onNavigate }) => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => onNavigate('use-cases')}
-              className="px-8 py-4 bg-[#3B82F6] text-white rounded-full font-medium text-lg shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] transition-all"
+              className="px-8 py-4 bg-[#3B82F6] text-white rounded-full font-medium text-lg shadow-lg hover:shadow-xl hover:bg-[#2563EB] transition-all"
             >
               Explore Use Cases
             </motion.button>
@@ -72,7 +72,7 @@ const HeroSection = ({ onNavigate }) => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => onNavigate('roi-calculator')}
-              className="px-8 py-4 bg-white/5 text-white rounded-full font-medium text-lg border border-white/10 hover:bg-white/10 transition-all"
+              className="px-8 py-4 bg-white text-[#1a1a1a] rounded-full font-medium text-lg border border-black/10 shadow-sm hover:shadow-md transition-all"
             >
               Calculate ROI
             </motion.button>
@@ -86,14 +86,14 @@ const HeroSection = ({ onNavigate }) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 + index * 0.1 }}
-                className="glass-card rounded-2xl p-6 text-center"
+                className="bg-white rounded-2xl p-6 text-center shadow-sm border border-black/5"
                 data-testid={`hero-stat-${index}`}
               >
-                <div className="metric-highlight text-white mb-2">
+                <div className="metric-highlight text-[#1a1a1a] mb-2">
                   {stat.value}
                   <span className="text-[#3B82F6]">{stat.suffix}</span>
                 </div>
-                <div className="text-sm text-[#A1A1AA]">{stat.label}</div>
+                <div className="text-sm text-[#717171]">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -109,7 +109,7 @@ const HeroSection = ({ onNavigate }) => {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-[#52525B]"
+            className="flex flex-col items-center gap-2 text-[#717171]"
           >
             <span className="text-xs uppercase tracking-widest">Scroll</span>
             <ArrowDown className="w-4 h-4" />

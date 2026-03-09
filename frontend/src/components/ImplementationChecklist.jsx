@@ -29,7 +29,7 @@ const ImplementationChecklist = () => {
     <section 
       id="checklist"
       data-testid="implementation-checklist-section"
-      className="py-20 px-6"
+      className="py-20 px-6 bg-white"
     >
       <div className="max-w-4xl mx-auto">
         {/* Header */}
@@ -39,10 +39,10 @@ const ImplementationChecklist = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-4">
             Implementation Checklist
           </h2>
-          <p className="text-[#A1A1AA] max-w-xl mx-auto">
+          <p className="text-[#4a4a4a] max-w-xl mx-auto">
             A 6-week roadmap to successful AI automation. Track your progress interactively.
           </p>
         </motion.div>
@@ -52,12 +52,12 @@ const ImplementationChecklist = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass-card rounded-2xl p-6 mb-8"
+          className="bg-[#f5f5f5] rounded-2xl p-6 mb-8 border border-black/5"
         >
           <div className="flex items-center justify-between mb-4">
             <div>
-              <div className="text-sm text-[#52525B] mb-1">Overall Progress</div>
-              <div className="text-2xl font-bold text-white">
+              <div className="text-sm text-[#717171] mb-1">Overall Progress</div>
+              <div className="text-2xl font-bold text-[#1a1a1a]">
                 {completedCount} / {totalTasks} tasks
               </div>
             </div>
@@ -65,7 +65,7 @@ const ImplementationChecklist = () => {
               <div className="text-4xl font-bold text-[#10B981]">
                 {progressPercent.toFixed(0)}%
               </div>
-              <div className="text-sm text-[#52525B]">Complete</div>
+              <div className="text-sm text-[#717171]">Complete</div>
             </div>
           </div>
           <Progress value={progressPercent} className="h-3" />
@@ -74,7 +74,7 @@ const ImplementationChecklist = () => {
         {/* Timeline View */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-6 top-0 bottom-0 w-px bg-white/10 hidden sm:block" />
+          <div className="absolute left-6 top-0 bottom-0 w-px bg-black/10 hidden sm:block" />
 
           {/* Phases */}
           {implementationChecklist.map((phase, phaseIndex) => {
@@ -98,18 +98,15 @@ const ImplementationChecklist = () => {
                   className="w-full relative z-10"
                 >
                   <div 
-                    className={`glass-card rounded-2xl p-6 transition-all ${
-                      isExpanded ? 'border-white/20' : ''
+                    className={`bg-white rounded-2xl p-6 transition-all border shadow-sm ${
+                      isExpanded ? 'border-black/20 shadow-md' : 'border-black/5'
                     }`}
                   >
                     <div className="flex items-center gap-4">
                       {/* Phase number */}
                       <div 
-                        className="relative z-10 w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold"
-                        style={{ 
-                          backgroundColor: `${phaseColors[phaseIndex]}20`,
-                          color: phaseColors[phaseIndex]
-                        }}
+                        className="relative z-10 w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold text-white"
+                        style={{ backgroundColor: phaseColors[phaseIndex] }}
                       >
                         {phaseIndex + 1}
                       </div>
@@ -117,10 +114,10 @@ const ImplementationChecklist = () => {
                       {/* Phase info */}
                       <div className="flex-1 text-left">
                         <div className="flex items-center gap-3 mb-1">
-                          <h3 className="text-lg font-semibold text-white">
+                          <h3 className="text-lg font-semibold text-[#1a1a1a]">
                             {phase.phase}
                           </h3>
-                          <span className="text-xs px-2 py-1 rounded-full bg-white/5 text-[#52525B]">
+                          <span className="text-xs px-2 py-1 rounded-full bg-[#f5f5f5] text-[#717171]">
                             <Clock className="w-3 h-3 inline mr-1" />
                             {phase.duration}
                           </span>
@@ -130,7 +127,7 @@ const ImplementationChecklist = () => {
                             value={(phaseCompleted / phase.tasks.length) * 100} 
                             className="h-1.5 w-32"
                           />
-                          <span className="text-xs text-[#52525B]">
+                          <span className="text-xs text-[#717171]">
                             {phaseCompleted}/{phase.tasks.length}
                           </span>
                         </div>
@@ -138,7 +135,7 @@ const ImplementationChecklist = () => {
 
                       {/* Expand indicator */}
                       <ChevronRight 
-                        className={`w-5 h-5 text-[#52525B] transition-transform ${
+                        className={`w-5 h-5 text-[#717171] transition-transform ${
                           isExpanded ? 'rotate-90' : ''
                         }`}
                       />
@@ -168,16 +165,16 @@ const ImplementationChecklist = () => {
                           className={`w-full flex items-center gap-3 p-4 rounded-xl transition-all ${
                             isCompleted 
                               ? 'bg-[#10B981]/10 border border-[#10B981]/20' 
-                              : 'bg-white/5 border border-transparent hover:bg-white/10'
+                              : 'bg-[#f5f5f5] border border-transparent hover:bg-[#e5e5e5]'
                           }`}
                         >
                           {isCompleted ? (
                             <CheckCircle2 className="w-5 h-5 text-[#10B981] flex-shrink-0" />
                           ) : (
-                            <Circle className="w-5 h-5 text-[#52525B] flex-shrink-0" />
+                            <Circle className="w-5 h-5 text-[#717171] flex-shrink-0" />
                           )}
                           <span className={`text-sm text-left ${
-                            isCompleted ? 'text-[#10B981]' : 'text-[#A1A1AA]'
+                            isCompleted ? 'text-[#10B981]' : 'text-[#4a4a4a]'
                           }`}>
                             {task}
                           </span>
@@ -198,15 +195,15 @@ const ImplementationChecklist = () => {
             animate={{ opacity: 1, scale: 1 }}
             className="mt-8 p-6 rounded-2xl text-center"
             style={{
-              background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%)',
-              border: '1px solid rgba(16, 185, 129, 0.3)'
+              background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%)',
+              border: '1px solid rgba(16, 185, 129, 0.2)'
             }}
           >
             <div className="text-4xl mb-3">🎉</div>
-            <h3 className="text-xl font-bold text-white mb-2">
+            <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">
               Congratulations!
             </h3>
-            <p className="text-[#A1A1AA]">
+            <p className="text-[#4a4a4a]">
               You've completed the implementation checklist. Your automation journey begins!
             </p>
           </motion.div>

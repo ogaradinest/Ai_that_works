@@ -46,7 +46,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#1a1a1a]" data-testid="app-container">
+    <div className="min-h-screen bg-[#f5f5f5]" data-testid="app-container">
       <HeroSection onNavigate={handleNavigate} />
       <UseCasesSection />
       <ROICalculator />
@@ -56,9 +56,9 @@ function App() {
       <Toaster />
       
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-white/5" data-testid="footer">
+      <footer className="py-12 px-6 border-t border-black/10 bg-white" data-testid="footer">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-[#52525B] text-sm">
+          <p className="text-[#717171] text-sm">
             AI Automation Guide for SMBs • 2025
           </p>
           <p className="text-[#3B82F6] text-xs mt-2">

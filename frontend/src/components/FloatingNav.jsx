@@ -37,7 +37,7 @@ const FloatingNav = ({ activeSection, onNavigate }) => {
           className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50"
           data-testid="floating-nav"
         >
-          <div className="flex items-center gap-2 px-4 py-3 bg-[#222222]/90 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl">
+          <div className="flex items-center gap-2 px-4 py-3 bg-white border border-black/10 rounded-full shadow-lg">
             {navItems.map(item => (
               <button
                 key={item.id}
@@ -46,7 +46,7 @@ const FloatingNav = ({ activeSection, onNavigate }) => {
                 className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all ${
                   activeSection === item.id
                     ? 'bg-[#3B82F6] text-white'
-                    : 'text-[#A1A1AA] hover:text-white hover:bg-white/10'
+                    : 'text-[#4a4a4a] hover:text-[#1a1a1a] hover:bg-[#f5f5f5]'
                 }`}
               >
                 <item.icon className="w-4 h-4" />
@@ -64,7 +64,7 @@ const FloatingNav = ({ activeSection, onNavigate }) => {
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0, opacity: 0 }}
                   onClick={scrollToTop}
-                  className="ml-2 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                  className="ml-2 p-2 rounded-full bg-[#f5f5f5] text-[#1a1a1a] hover:bg-[#e5e5e5] transition-colors"
                   data-testid="scroll-to-top"
                 >
                   <ArrowUp className="w-4 h-4" />
