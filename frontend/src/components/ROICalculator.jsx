@@ -47,7 +47,7 @@ const ROICalculator = () => {
             backgroundImage: `url('https://images.unsplash.com/photo-1752614671052-92e18f534db1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzZ8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBhdXRvbWF0ZWQlMjBmYWN0b3J5JTIwcm9ib3RpY3N8ZW58MHx8fHwxNzcyMDU4OTk2fDA&ixlib=rb-4.1.0&q=85')`
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/95 to-[#050505]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a] via-[#1a1a1a]/95 to-[#1a1a1a]" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">

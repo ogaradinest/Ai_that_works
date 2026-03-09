@@ -107,7 +107,7 @@ const ToolComparison = () => {
     <section 
       id="tools"
       data-testid="tool-comparison-section"
-      className="py-20 px-6 bg-[#0A0A0A]"
+      className="py-20 px-6 bg-[#222222]"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}

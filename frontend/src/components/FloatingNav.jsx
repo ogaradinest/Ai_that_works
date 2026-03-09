@@ -37,7 +37,7 @@ const FloatingNav = ({ activeSection, onNavigate }) => {
           className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50"
           data-testid="floating-nav"
         >
-          <div className="flex items-center gap-2 px-4 py-3 bg-[#0A0A0A]/90 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl">
+          <div className="flex items-center gap-2 px-4 py-3 bg-[#222222]/90 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl">
             {navItems.map(item => (
               <button
                 key={item.id}

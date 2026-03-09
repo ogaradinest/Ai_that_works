@@ -34,7 +34,7 @@ const UseCaseModal = ({ useCase, onClose }) => {
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.95, opacity: 0 }}
         onClick={e => e.stopPropagation()}
-        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#0A0A0A] rounded-3xl border border-white/10"
+        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#222222] rounded-3xl border border-white/10"
         data-testid={`use-case-modal-${useCase.id}`}
       >
         {/* Header with gradient */}

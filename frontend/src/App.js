@@ -46,7 +46,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#050505]" data-testid="app-container">
+    <div className="min-h-screen bg-[#1a1a1a]" data-testid="app-container">
       <HeroSection onNavigate={handleNavigate} />
       <UseCasesSection />
       <ROICalculator />

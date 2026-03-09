@@ -5,9 +5,9 @@
 @tailwind utilities;
 
 :root {
-    --bg-default: #050505;
-    --bg-paper: #0A0A0A;
-    --bg-subtle: #111111;
+    --bg-default: #1a1a1a;
+    --bg-paper: #222222;
+    --bg-subtle: #2a2a2a;
     --text-primary: #FFFFFF;
     --text-secondary: #A1A1AA;
     --text-muted: #52525B;
@@ -26,7 +26,7 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--bg-default);
+    background-color: #1a1a1a;
     color: var(--text-primary);
 }
 

@@ -15,7 +15,7 @@ const HeroSection = ({ onNavigate }) => {
           backgroundImage: `url('https://images.unsplash.com/photo-1647427060118-4911c9821b82?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzZ8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBhdXRvbWF0ZWQlMjBmYWN0b3J5JTIwcm9ib3RpY3N8ZW58MHx8fHwxNzcyMDU4OTk2fDA&ixlib=rb-4.1.0&q=85')`
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/95 via-[#050505]/90 to-[#050505]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a]/95 via-[#1a1a1a]/90 to-[#1a1a1a]" />
       
       {/* Animated grid pattern */}
       <div className="absolute inset-0 opacity-20">
