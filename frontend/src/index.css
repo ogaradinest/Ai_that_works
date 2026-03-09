@@ -132,6 +132,21 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
+/* Custom slider track color - Dark grey */
+[data-radix-slider-track] {
+    background: #d1d5db !important;
+}
+
+[data-radix-slider-range] {
+    background: #4b5563 !important;
+}
+
+[data-radix-slider-thumb] {
+    background: #374151 !important;
+    border: 2px solid white !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+}
+
 @layer base {
     :root {
         --background: 0 0% 96%;
